@@ -34,7 +34,7 @@ function RouteComponent() {
 					},
 				});
 			},
-			onError: (e) => {
+			onError: (_e) => {
 				toast.error("Failed to create link");
 			},
 		}),
