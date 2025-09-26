@@ -46,7 +46,7 @@ function RouteComponent() {
 		try {
 			await navigator.clipboard.writeText(text);
 			toast.success("Link copied to clipboard");
-		} catch (err) {
+		} catch (_) {
 			toast.error("Failed to copy link");
 		}
 	};
@@ -57,20 +57,19 @@ function RouteComponent() {
 			cell: (info) => <div className="pl-4">{info.getValue()}</div>,
 		}),
 		columnHelper.accessor("linkId", {
-			header: "Link",
+			header: "Default Link",
 			cell: (info) => (
 				<div className="flex items-center gap-2">
 					<span className="truncate max-w-[200px]">
-						{`https://${import.meta.env.VITE_BACKEND_HOST}/${info.getValue()}`}
+						{info.row.original.defaultDestination}
 					</span>
 					<Button
 						variant="ghost"
 						size="sm"
+						className="cursor-pointer"
 						onClick={(e) => {
 							e.stopPropagation();
-							copyToClipboard(
-								`https://${import.meta.env.VITE_BACKEND_HOST}/${info.getValue()}`,
-							);
+							copyToClipboard(info.row.original.defaultDestination);
 						}}
 					>
 						<Copy className="h-4 w-4" />
@@ -131,6 +130,7 @@ function RouteComponent() {
 									}}
 									key={row.id}
 									data-state={row.getIsSelected() && "selected"}
+									className="cursor-pointer"
 								>
 									{row.getVisibleCells().map((cell) => (
 										<TableCell key={cell.id}>
