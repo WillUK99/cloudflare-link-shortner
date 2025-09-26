@@ -53,7 +53,6 @@ export async function getLinks(accountId: string, createdBefore?: string) {
         ),
         linkClicks: 6,
         destinations: Object.keys(JSON.parse(link.destinations as string)).length,
-        defaultDestination: JSON.parse(link.destinations as string).default,
     }));
 }
 
