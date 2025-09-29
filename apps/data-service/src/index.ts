@@ -28,9 +28,9 @@ export default class DataService extends WorkerEntrypoint<Env> {
 					default:
 						break;
 				}
+			} else {
+				console.error(parsedMessage.error)
 			}
-
-			console.error(parsedMessage.error)
 		}
 	}
 }
