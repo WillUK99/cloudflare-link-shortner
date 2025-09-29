@@ -7,7 +7,7 @@ const BaseQueueMessageSchema = z.object({
 });
 
 // Email queue message schema
-export const LinkClickMessageSchema = BaseQueueMessageSchema.extend({
+export const linkClickMessageSchema = BaseQueueMessageSchema.extend({
   type: z.literal("LINK_CLICK"),
   data: z.object({
     id: z.string(),
@@ -20,9 +20,9 @@ export const LinkClickMessageSchema = BaseQueueMessageSchema.extend({
   }),
 });
 
-export const QueueMessageSchema = z.discriminatedUnion("type", [
-  LinkClickMessageSchema,
+export const queueMessageSchema = z.discriminatedUnion("type", [
+  linkClickMessageSchema,
 ]);
 
-export type LinkClickMessageType = z.infer<typeof LinkClickMessageSchema>;
-export type QueueMessageType = z.infer<typeof QueueMessageSchema>;
+export type LinkClickMessageType = z.infer<typeof linkClickMessageSchema>;
+export type QueueMessageType = z.infer<typeof queueMessageSchema>;
