@@ -15,6 +15,7 @@ export default class DataService extends WorkerEntrypoint<Env> {
 	}
 
 	async queue(batch: MessageBatch<unknown>) {
+		// We could distinguish between queues with different handlers here but for now we only have one
 		for (const message of batch.messages) {
 			const parsedMessage = queueMessageSchema.safeParse(message.body);
 
