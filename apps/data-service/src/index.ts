@@ -4,6 +4,8 @@ import { WorkerEntrypoint } from 'cloudflare:workers';
 import { App } from './hono/app';
 import { handleLinkClick } from './queue-handlers/link-clicks';
 
+export { DestinationEvaluationWorkflow } from './workflows/destination-evalutation-workflow';
+
 export default class DataService extends WorkerEntrypoint<Env> {
 	constructor(ctx: ExecutionContext, env: Env) {
 		super(ctx, env);
