@@ -22,7 +22,7 @@ export class EvaluationScheduler extends DurableObject<Env> {
     this.clickData = { linkId, accountId, destinationUrl, destinationCountryCode }
     await this.ctx.storage.put("click_data", this.clickData)
 
-    const alarm = this.ctx.storage.getAlarm()
+    const alarm = await this.ctx.storage.getAlarm()
     if (!alarm) {
       const tenSecondsFromNow = moment().add(10, 'seconds').valueOf()
       await this.ctx.storage.setAlarm(tenSecondsFromNow)
