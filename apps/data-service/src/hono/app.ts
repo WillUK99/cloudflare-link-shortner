@@ -12,7 +12,8 @@ App.get('/click-socket', async (c) => {
     return c.text('Expected Upgrade: websocket', 426);
   }
 
-  const accountId = c.req.header('account-id')
+  // const accountId = c.req.header('account-id')
+  const accountId = '1234567890'
   if (!accountId) return c.text('No Headers', 404);
   const doId = c.env.LINK_CLICK_TRACKER_OBJECT.idFromName(accountId);
   const stub = c.env.LINK_CLICK_TRACKER_OBJECT.get(doId);
