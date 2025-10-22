@@ -18,6 +18,7 @@
 	},
 	"env": {
 		"stage": {
+			"name": "user-application-stage",
 			"vars": {
 				"VITE_BASE_HOST": "user-application-stage.willuk1999.workers.dev",
 				"CLOUDFLARE_ENV": "stage"
@@ -38,6 +39,7 @@
 			]
 		},
 		"production": {
+			"name": "user-application-production",
 			"vars": {
 				"VITE_BASE_HOST": "user-application-production.willuk1999.workers.dev",
 				"CLOUDFLARE_ENV": "production"
