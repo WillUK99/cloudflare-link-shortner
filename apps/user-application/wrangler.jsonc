@@ -18,11 +18,6 @@
 	},
 	"env": {
 		"stage": {
-			"name": "user-application-stage",
-			"vars": {
-				"VITE_BASE_HOST": "user-application-stage.willuk1999.workers.dev",
-				"CLOUDFLARE_ENV": "stage"
-			},
 			"d1_databases": [
 				{
 					"binding": "DB",
@@ -39,15 +34,11 @@
 			]
 		},
 		"production": {
-			"name": "user-application-production",
-			"vars": {
-				"VITE_BASE_HOST": "user-application-production.willuk1999.workers.dev",
-				"CLOUDFLARE_ENV": "production"
-			},
 			"d1_databases": [
 				{
 					"binding": "DB",
-					"database_id": "64c35679-d1d8-4ca6-8fc6-7c4837f5d53c"
+					"database_id": "64c35679-d1d8-4ca6-8fc6-7c4837f5d53c",
+					"remote": true
 				}
 			],
 			"services": [
