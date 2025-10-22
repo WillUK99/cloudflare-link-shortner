@@ -91,13 +91,13 @@
 			"d1_databases": [
 				{
 					"binding": "DB",
-					"database_id": "64c35679-d1d8-4ca6-8fc6-7c4837f5d53c",
+					"database_id": "64c35679-d1d8-4ca6-8fc6-7c4837f5d53c"
 				}
 			],
 			"kv_namespaces": [
 				{
 					"binding": "KV",
-					"id": "e9f4fa6c62354fe28df795f1bf92aa25",
+					"id": "e9f4fa6c62354fe28df795f1bf92aa25"
 				}
 			],
 			"queues": {
@@ -157,7 +157,7 @@
 				{
 					"tag": "v2",
 					"new_sqlite_classes": ["LinkClickTracker"]
-				},
+				}
 			]
 		}
 	}
