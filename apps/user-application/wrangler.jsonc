@@ -18,6 +18,10 @@
 	},
 	"env": {
 		"stage": {
+			"vars": {
+				"VITE_BASE_HOST": "user-application-stage.willuk1999.workers.dev",
+				"CLOUDFLARE_ENV": "stage"
+			},
 			"d1_databases": [
 				{
 					"binding": "DB",
@@ -34,6 +38,10 @@
 			]
 		},
 		"production": {
+			"vars": {
+				"VITE_BASE_HOST": "user-application-production.willuk1999.workers.dev",
+				"CLOUDFLARE_ENV": "production"
+			},
 			"d1_databases": [
 				{
 					"binding": "DB",
