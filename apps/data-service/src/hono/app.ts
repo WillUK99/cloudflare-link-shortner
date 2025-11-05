@@ -58,3 +58,7 @@ App.get('/:id', async (c) => {
 
   return c.redirect(destination)
 })
+
+App.get('/health', (c) => {
+  return c.text('OK', 200);
+})
