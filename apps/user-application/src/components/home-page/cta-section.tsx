@@ -43,6 +43,10 @@ export function CtaSection() {
               <span>💳</span>
               <span>No credit card required</span>
             </div>
+            <div className="flex items-center gap-2">
+              <span>📈</span>
+              <span>Win back lost revenue</span>
+            </div>
           </div>
         </div>
       </div>
