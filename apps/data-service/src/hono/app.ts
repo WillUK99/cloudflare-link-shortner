@@ -5,6 +5,9 @@ import { Hono } from 'hono';
 
 export const App = new Hono<{ Bindings: Env }>();
 
+App.get('/health', (c) => {
+  return c.text('OK', 200);
+})
 
 App.get('/click-socket', async (c) => {
   const upgradeHeader = c.req.header('Upgrade');
@@ -58,3 +61,4 @@ App.get('/:id', async (c) => {
 
   return c.redirect(destination)
 })
+
